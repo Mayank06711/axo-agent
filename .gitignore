@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+venv/
+env/
+.venv/
+
+.env
+.env.local
+.env.production
+
+node_modules/
+dist/
+.next/
+
+*.log
+logs/
+
+.vscode/
+.idea/
+
+.claude/
+
+# Demo videos
+*.mp4

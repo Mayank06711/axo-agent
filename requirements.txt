@@ -1,0 +1,33 @@
+# Core
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# Redis
+redis[hiredis]
+
+# SSE
+sse-starlette
+
+# LangGraph + LLM providers
+langchain-core
+langchain-openai
+langchain-anthropic
+langchain-google-genai
+langgraph
+langgraph-prebuilt
+
+# Browser
+playwright
+playwright-stealth
+
+# HTTP client
+httpx
+
+# Environment
+python-dotenv
+
+# HTML parsing (for standards checks)
+beautifulsoup4
+lxml
