@@ -1,0 +1,7 @@
+axo.mayank06711.xyz {
+    reverse_proxy frontend:80
+}
+
+api.mayank06711.xyz {
+    reverse_proxy backend:8002
+}
