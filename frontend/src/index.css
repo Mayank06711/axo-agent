@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  --color-surface: #171717;
+  --color-surface-elevated: #262626;
+  --color-brand: #3b82f6;
+  --color-brand-hover: #2563eb;
+  --color-accent: #8b5cf6;
+}
+
+body {
+  margin: 0;
+  background: #0a0a0a;
+  color: #fafafa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Background grid pattern ── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ── Floating orbs (analyzing state) ── */
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+  25% { transform: translate(30px, -40px) scale(1.1); opacity: 0.25; }
+  50% { transform: translate(-20px, -60px) scale(0.95); opacity: 0.2; }
+  75% { transform: translate(40px, -20px) scale(1.05); opacity: 0.18; }
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 300px; height: 300px;
+  background: #8b5cf6;
+  top: 10%; left: 10%;
+  animation: float-orb 8s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 250px; height: 250px;
+  background: #3b82f6;
+  top: 30%; right: 15%;
+  animation: float-orb 10s ease-in-out infinite 2s;
+}
+
+.orb-3 {
+  width: 200px; height: 200px;
+  background: #10b981;
+  bottom: 20%; left: 30%;
+  animation: float-orb 12s ease-in-out infinite 4s;
+}
+
+/* ── Card hover lift ── */
+.card-hover {
+  transition: transform 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Scan line (analyzing) ── */
+@keyframes scan-line {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8b5cf6, #3b82f6, transparent);
+  box-shadow: 0 0 15px 2px rgba(139, 92, 246, 0.3);
+  animation: scan-line 3s ease-in-out infinite;
+}
+
+/* ── Fade in up ── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+.animate-fade-in-up-delayed {
+  opacity: 0;
+  animation: fade-in-up 0.4s ease-out 0.15s forwards;
+}
+
+.animate-fade-in-up-delayed-2 {
+  opacity: 0;
+  animation: fade-in-up 0.4s ease-out 0.3s forwards;
+}
